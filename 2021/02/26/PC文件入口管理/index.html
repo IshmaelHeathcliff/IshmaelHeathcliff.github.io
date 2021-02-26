@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="基于内容搜索的管理通过快速搜索软件  Listary WOX PowerToys Run Everything Spotlight Alfred …  输入名称（全称或简称）来打开软件或文件 基于文件位置的管理通过桌面、开始菜单、dock、文件管理器等方式来打开软件或文件 快速入口的缺点通常认为搜索需要输入文件名，比直接点击文件图标要麻烦，故以下偏向讨论为什么以搜索为主要方式更高效。 基于文件位置">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PC文件管理方式">
+<meta property="og:url" content="http://yoursite.com/2021/02/26/PC%E6%96%87%E4%BB%B6%E5%85%A5%E5%8F%A3%E7%AE%A1%E7%90%86/index.html">
+<meta property="og:site_name" content="絶望した">
+<meta property="og:description" content="基于内容搜索的管理通过快速搜索软件  Listary WOX PowerToys Run Everything Spotlight Alfred …  输入名称（全称或简称）来打开软件或文件 基于文件位置的管理通过桌面、开始菜单、dock、文件管理器等方式来打开软件或文件 快速入口的缺点通常认为搜索需要输入文件名，比直接点击文件图标要麻烦，故以下偏向讨论为什么以搜索为主要方式更高效。 基于文件位置">
+<meta property="og:locale">
+<meta property="article:published_time" content="2021-02-26T03:32:23.124Z">
+<meta property="article:modified_time" content="2021-02-26T03:32:23.124Z">
+<meta property="article:author" content="Ishamel Heathcliff">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>PC文件管理方式</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+      
+<link rel="stylesheet" href="/css/rtl.css">
+
+    
+    <!-- rss -->
+    
+    
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="http://github.com/IshmaelHeathcliff">Projects</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" href="/2021/02/21/hello-world/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2021/02/26/PC%E6%96%87%E4%BB%B6%E5%85%A5%E5%8F%A3%E7%AE%A1%E7%90%86/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://yoursite.com/2021/02/26/PC%E6%96%87%E4%BB%B6%E5%85%A5%E5%8F%A3%E7%AE%A1%E7%90%86/&text=PC文件管理方式"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2021/02/26/PC%E6%96%87%E4%BB%B6%E5%85%A5%E5%8F%A3%E7%AE%A1%E7%90%86/&title=PC文件管理方式"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2021/02/26/PC%E6%96%87%E4%BB%B6%E5%85%A5%E5%8F%A3%E7%AE%A1%E7%90%86/&is_video=false&description=PC文件管理方式"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=PC文件管理方式&body=Check out this article: http://yoursite.com/2021/02/26/PC%E6%96%87%E4%BB%B6%E5%85%A5%E5%8F%A3%E7%AE%A1%E7%90%86/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://yoursite.com/2021/02/26/PC%E6%96%87%E4%BB%B6%E5%85%A5%E5%8F%A3%E7%AE%A1%E7%90%86/&title=PC文件管理方式"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://yoursite.com/2021/02/26/PC%E6%96%87%E4%BB%B6%E5%85%A5%E5%8F%A3%E7%AE%A1%E7%90%86/&title=PC文件管理方式"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2021/02/26/PC%E6%96%87%E4%BB%B6%E5%85%A5%E5%8F%A3%E7%AE%A1%E7%90%86/&title=PC文件管理方式"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://yoursite.com/2021/02/26/PC%E6%96%87%E4%BB%B6%E5%85%A5%E5%8F%A3%E7%AE%A1%E7%90%86/&title=PC文件管理方式"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2021/02/26/PC%E6%96%87%E4%BB%B6%E5%85%A5%E5%8F%A3%E7%AE%A1%E7%90%86/&name=PC文件管理方式&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://yoursite.com/2021/02/26/PC%E6%96%87%E4%BB%B6%E5%85%A5%E5%8F%A3%E7%AE%A1%E7%90%86/&t=PC文件管理方式"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8E%E5%86%85%E5%AE%B9%E6%90%9C%E7%B4%A2%E7%9A%84%E7%AE%A1%E7%90%86"><span class="toc-number">1.</span> <span class="toc-text">基于内容搜索的管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8E%E6%96%87%E4%BB%B6%E4%BD%8D%E7%BD%AE%E7%9A%84%E7%AE%A1%E7%90%86"><span class="toc-number">2.</span> <span class="toc-text">基于文件位置的管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BF%AB%E9%80%9F%E5%85%A5%E5%8F%A3%E7%9A%84%E7%BC%BA%E7%82%B9"><span class="toc-number">3.</span> <span class="toc-text">快速入口的缺点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86%E5%99%A8%E7%9A%84%E7%BC%BA%E7%82%B9"><span class="toc-number">4.</span> <span class="toc-text">文件管理器的缺点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%90%9C%E7%B4%A2%E8%BD%AF%E4%BB%B6%E7%9A%84%E4%BC%98%E7%82%B9"><span class="toc-number">5.</span> <span class="toc-text">搜索软件的优点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%90%9C%E7%B4%A2%E7%9A%84%E7%BC%BA%E7%82%B9"><span class="toc-number">6.</span> <span class="toc-text">搜索的缺点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BB%BA%E8%AE%AE"><span class="toc-number">7.</span> <span class="toc-text">建议</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        PC文件管理方式
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Ishamel Heathcliff</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2021-02-26T03:32:23.124Z" itemprop="datePublished">2021-02-26</time>
+        
+      
+    </div>
+
+
+      
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h2 id="基于内容搜索的管理"><a href="#基于内容搜索的管理" class="headerlink" title="基于内容搜索的管理"></a>基于内容搜索的管理</h2><p>通过快速搜索软件</p>
+<ul>
+<li>Listary</li>
+<li>WOX</li>
+<li>PowerToys Run</li>
+<li>Everything</li>
+<li>Spotlight</li>
+<li>Alfred</li>
+<li>…</li>
+</ul>
+<p>输入名称（全称或简称）来打开软件或文件</p>
+<h2 id="基于文件位置的管理"><a href="#基于文件位置的管理" class="headerlink" title="基于文件位置的管理"></a>基于文件位置的管理</h2><p>通过桌面、开始菜单、dock、文件管理器等方式来打开软件或文件</p>
+<h2 id="快速入口的缺点"><a href="#快速入口的缺点" class="headerlink" title="快速入口的缺点"></a>快速入口的缺点</h2><p>通常认为搜索需要输入文件名，比直接点击文件图标要麻烦，故以下偏向讨论为什么以搜索为主要方式更高效。</p>
+<p>基于文件位置的管理通过将常用程序与文件的快捷方式或文件本身放置于一个<strong>容易触及的地方</strong>（快速入口），如桌面、Dock、磁贴、任务栏等，来减少找到常用程序与文件的时间。</p>
+<p>这种方式十分有效，但限制与短板也很明显：</p>
+<ol>
+<li>容量小<ol>
+<li>放置的东西越多就越混乱</li>
+</ol>
+</li>
+<li>缺乏筛选方式<ol>
+<li>当放置的东西比较多时，筛选就很重要</li>
+<li>但位置是手动或简单方式指定的</li>
+</ol>
+</li>
+<li>依赖手动管理<ol>
+<li>去除不再常用的文件</li>
+<li>增加常用文件</li>
+<li>排列位置</li>
+<li>若不常常手动管理，会造成混杂</li>
+</ol>
+</li>
+<li>入口不统一<ol>
+<li>如果需要找到没有放在快速入口的文件，就需要求助于文件管理器</li>
+</ol>
+</li>
+<li>容易注意力转移<ol>
+<li>寻找一个软件或文件，需要眼睛扫视并排查，接受与目标无关的信息，形成干扰</li>
+</ol>
+</li>
+</ol>
+<h2 id="文件管理器的缺点"><a href="#文件管理器的缺点" class="headerlink" title="文件管理器的缺点"></a>文件管理器的缺点</h2><p>文件管理器是基于文件地址的<strong>完备且基本</strong>的文件管理方式，但直接在文件管理器中翻查应该是我们的最后手段，它常有以下问题</p>
+<ol>
+<li>忘记文件放在哪了<ol>
+<li>文件内容与文件地址的相关性很多时候并不强，尤其是没有花费足够的精力来创建并维护一个良好的文件夹分类系统的话</li>
+</ol>
+</li>
+<li>整理难度大<ol>
+<li>文件夹分类是树状的，即每个文件只能单分类，如果要通过快捷方式来实现多分类，将耗费更多的精力来创建和维护</li>
+<li>文件分类很有可能不明确，创建的文件夹分类也不完备</li>
+</ol>
+</li>
+<li>找着找着，忘了自己要找什么<ol>
+<li>要找到一个文件，必须额外记忆与其内容可能关系不大的文件地址，这种记忆通常并不精确</li>
+<li>必须在可能的几个位置一一排查</li>
+<li>形成习惯后，比起文件内容，可能更优先去记忆地址</li>
+<li>在这个过程中，焦点从文件内容离开，从工作内容离开，转而去回忆地址</li>
+</ol>
+</li>
+</ol>
+<h2 id="搜索软件的优点"><a href="#搜索软件的优点" class="headerlink" title="搜索软件的优点"></a>搜索软件的优点</h2><p>如果能够形成记忆文件标题的习惯，那么通过关键字搜索可以大大加快找到目标文件的速度，在大多数情况下优于直接在文件管理器中翻查。而针对<strong>快速入口</strong>的问题，搜索的优势在于：</p>
+<ul>
+<li>与文件数量无关</li>
+<li>通过标题筛选</li>
+<li>管理成本低<ul>
+<li>不需要太多的手动管理<ul>
+<li>可以将长期常用的程序或文件用自定义的关键字来快速获取</li>
+<li>但搜索软件都有常用统计，经常使用的自然会排在前面</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>统一入口<ul>
+<li>常用文件只输入前边少数字符就可在搜索结果的前面找到</li>
+<li>不常用文件也可在筛选后的清单中查找</li>
+</ul>
+</li>
+<li>思路清晰<ul>
+<li>文件名与文件内容联系紧密，注意力不容易转移</li>
+<li>对眼睛查找的依赖小，可以闭上眼输入文件名（键盘熟悉）</li>
+<li>在任何地方通过快捷键调用程序，然后迅速输入文件名，常用文件通常就是首项，一气呵成</li>
+</ul>
+</li>
+</ul>
+<h2 id="搜索的缺点"><a href="#搜索的缺点" class="headerlink" title="搜索的缺点"></a>搜索的缺点</h2><p>基于搜索的管理的缺点，在于</p>
+<ol>
+<li>依赖键盘而非鼠标，与大多数人的习惯不同</li>
+<li>操作时间的下限比快速入口高</li>
+<li>需要将精力集中在工作内容与文件内容上，失去大脑偷懒（慢慢点文件夹和找文件）时间(笑)</li>
+<li>需要养成记忆文件名称的习惯</li>
+</ol>
+<h2 id="建议"><a href="#建议" class="headerlink" title="建议"></a>建议</h2><ol>
+<li>在桌面、任务栏等快速入口放少数长期经常使用的程序，越容易触及的快速入口就要放置越少的程序</li>
+<li>文件夹分类不要太多太杂，有一个临时文件夹，或近期工作文件夹（也可置于桌面等处）</li>
+<li>优先级<ol>
+<li>当快速入口可以直接到达并使用时，使用快速入口</li>
+<li>从临时文件夹或近期工作文件夹获取</li>
+<li>使用搜索软件</li>
+<li>最终手段，文件浏览器翻查</li>
+</ol>
+</li>
+</ol>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="http://github.com/IshmaelHeathcliff">Projects</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8E%E5%86%85%E5%AE%B9%E6%90%9C%E7%B4%A2%E7%9A%84%E7%AE%A1%E7%90%86"><span class="toc-number">1.</span> <span class="toc-text">基于内容搜索的管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8E%E6%96%87%E4%BB%B6%E4%BD%8D%E7%BD%AE%E7%9A%84%E7%AE%A1%E7%90%86"><span class="toc-number">2.</span> <span class="toc-text">基于文件位置的管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BF%AB%E9%80%9F%E5%85%A5%E5%8F%A3%E7%9A%84%E7%BC%BA%E7%82%B9"><span class="toc-number">3.</span> <span class="toc-text">快速入口的缺点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86%E5%99%A8%E7%9A%84%E7%BC%BA%E7%82%B9"><span class="toc-number">4.</span> <span class="toc-text">文件管理器的缺点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%90%9C%E7%B4%A2%E8%BD%AF%E4%BB%B6%E7%9A%84%E4%BC%98%E7%82%B9"><span class="toc-number">5.</span> <span class="toc-text">搜索软件的优点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%90%9C%E7%B4%A2%E7%9A%84%E7%BC%BA%E7%82%B9"><span class="toc-number">6.</span> <span class="toc-text">搜索的缺点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BB%BA%E8%AE%AE"><span class="toc-number">7.</span> <span class="toc-text">建议</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2021/02/26/PC%E6%96%87%E4%BB%B6%E5%85%A5%E5%8F%A3%E7%AE%A1%E7%90%86/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://yoursite.com/2021/02/26/PC%E6%96%87%E4%BB%B6%E5%85%A5%E5%8F%A3%E7%AE%A1%E7%90%86/&text=PC文件管理方式"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2021/02/26/PC%E6%96%87%E4%BB%B6%E5%85%A5%E5%8F%A3%E7%AE%A1%E7%90%86/&title=PC文件管理方式"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2021/02/26/PC%E6%96%87%E4%BB%B6%E5%85%A5%E5%8F%A3%E7%AE%A1%E7%90%86/&is_video=false&description=PC文件管理方式"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=PC文件管理方式&body=Check out this article: http://yoursite.com/2021/02/26/PC%E6%96%87%E4%BB%B6%E5%85%A5%E5%8F%A3%E7%AE%A1%E7%90%86/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://yoursite.com/2021/02/26/PC%E6%96%87%E4%BB%B6%E5%85%A5%E5%8F%A3%E7%AE%A1%E7%90%86/&title=PC文件管理方式"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://yoursite.com/2021/02/26/PC%E6%96%87%E4%BB%B6%E5%85%A5%E5%8F%A3%E7%AE%A1%E7%90%86/&title=PC文件管理方式"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2021/02/26/PC%E6%96%87%E4%BB%B6%E5%85%A5%E5%8F%A3%E7%AE%A1%E7%90%86/&title=PC文件管理方式"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://yoursite.com/2021/02/26/PC%E6%96%87%E4%BB%B6%E5%85%A5%E5%8F%A3%E7%AE%A1%E7%90%86/&title=PC文件管理方式"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2021/02/26/PC%E6%96%87%E4%BB%B6%E5%85%A5%E5%8F%A3%E7%AE%A1%E7%90%86/&name=PC文件管理方式&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://yoursite.com/2021/02/26/PC%E6%96%87%E4%BB%B6%E5%85%A5%E5%8F%A3%E7%AE%A1%E7%90%86/&t=PC文件管理方式"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2016-2021
+    Ishamel Heathcliff
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="http://github.com/IshmaelHeathcliff">Projects</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+
+    <!-- jquery -->
+
+<script src="/lib/jquery/jquery.min.js"></script>
+
+
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+
+<!-- clipboard -->
+
+  
+<script src="/lib/clipboard/clipboard.min.js"></script>
+
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Umami Analytics -->
+
+<!-- Disqus Comments -->
+
+
+</body>
+</html>
